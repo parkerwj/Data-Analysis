@@ -33,6 +33,8 @@ The responses to these questions dynamically adjust as the data is sourced live 
 
 - **Question 5**: Are there any overbought or oversold conditions for [Company Name] ([Stock Symbol]) based on RSI?
   The code plots horizontal lines at RSI values of 30 (indicating oversold conditions) and 70 (indicating overbought conditions) on the RSI chart.
+- **Question 6**: What is the Value at Risk (VaR) at a 95% confidence level for [stock_name] [stock_symbol]?
+    Value at Risk (VaR) at 95% confidence level: {var * 100:.2f}%
 
 # Development Environment
 

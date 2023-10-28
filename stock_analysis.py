@@ -33,6 +33,16 @@ def advanced_stock_analysis(data):
 
     return data
 
+def calculate_var(data):
+    # Calculate the daily returns
+    data['Daily Returns'] = data['Adj Close'].pct_change()
+    
+    # Calculate VaR at a specified confidence level (e.g., 95%)
+    confidence_level = 0.95
+    var = data['Daily Returns'].quantile(1 - confidence_level)
+    
+    return var
+
 def plot_stock_data(data, stock_name):
     plt.figure(figsize=(12, 10))
 
@@ -72,7 +82,9 @@ def main():
     data = fetch_stock_data(stock_symbol, years)
     data = basic_stock_analysis(data)
     data = advanced_stock_analysis(data)
-
+    
+    var = calculate_var(data)
+    
     stock_name = get_company_name(stock_symbol)
 
     # Print questions and answers
@@ -91,6 +103,9 @@ def main():
 
     print(f"Question 5: Are there any overbought or oversold conditions for {stock_name} ({stock_symbol}) based on RSI?")
     print("The code plots horizontal lines at RSI values of 30 (indicating oversold conditions) and 70 (indicating overbought conditions) on the RSI chart.")
+    
+    print(f"Question 6: What is the Value at Risk (VaR) at a 95% confidence level for {stock_name} ({stock_symbol})?")
+    print(f"Value at Risk (VaR) at 95% confidence level: {var * 100:.2f}%")
 
     # Plot the stock data with the stock name in the title
     plot_stock_data(data, stock_name)
