@@ -12,7 +12,7 @@ The purpose of this software is to analyze historical stock data, answer specifi
 
 ## Software Demo Video
 
-You can watch a 4-5 minute demonstration of this project in action on [YouTube](http://youtube.link.goes.here).
+You can watch a 4-5 minute demonstration of this project in action on [YouTube](https://youtu.be/1hWMBlLd-9U).
 
 # Data Analysis Results
 
